@@ -10,13 +10,15 @@ One use case can be to monitor github commits, initialize pull and restart a ser
 
 2. Place `root.ca.pem`, `xxx.cert.pem`, `xxx.private.key` in to certificates directory
 
-3. Rename `config-example.py` to `config.py` and replace values for `certificatePath` and `privateKeyPath` with the names of the files from step 2
+3. Rename `config-example.yml` to `config.yml` and replace values for `certificatePath` and `privateKeyPath` with the names of the files from step 2. 
 
-4. Select thing from aws iot console (Manage -> Things -> [thing] -> Interact) and replace `host` with the url from the site
+4. Update the arn of the iot device to `config.yml`. The arn should be prefixed with `arn` and can be found under details in the iot dashboard (e.g. `arn:aws:iot:us-east-1:xxx`)
 
-5. Set subsciptions and corresponding functions in `subscriptions.py`. By default if a subscription for the topic `topic` causes the console to print the message
+5. Update the host of the iot device to `config.yml`. It can be found when you select thing from aws iot console (Manage -> Things -> [thing] -> Interact) and should look like a url (e.g. `xxx.iot.us-east-1.amazonaws.com`)
 
-6. Run `python app.py`
+6. Set subsciptions and corresponding functions in `subscriptions.py`. By default if a subscription for the topic `topic` causes the console to print the message
+
+7. From the src folder, run `python app.py`
 
 ## Testing messages
 
@@ -24,11 +26,9 @@ Messages can be sent from the aws iot console (Test -> Publish). Test by sending
 
 ## Sending messages via AWS Lambda
 
-1. Replace `provider.env.HOST` and `provider.iamRoleStatements.Resource` in `iot-message-lambda/serverless`
+1. Go into the lambda directory and run `serverless deploy`
 
-2. Run `serverless deploy`
-
-3. Based on the output, you should see a POST under endpoints with the url (e.g. `POST - https://xxx.amazonaws.com/dev/iotMessage/post`). You can test the endpoing using 
+2. Based on the output, you should see a POST under endpoints with the url (e.g. `POST - https://xxx.amazonaws.com/dev/iotMessage/post`). You can test the endpoing using 
 
 ```
 curl --header "Content-Type: application/json" \

@@ -10,14 +10,14 @@ provider:
   runtime: nodejs8.10
   environment:
     # Tables defined by amplify
-    HOST: xxx.iot.us-east-1.amazonaws.com
+    HOST: ${file(../config.yml):host}
 
   iamRoleStatements:
     - Effect: "Allow"
       Action:
         - "iot:Publish"
       Resource:
-        - "arn:aws:iot:xxx:topic/*"
+        - ${file(../config.yml):arn}:topic/*
 
 functions:
   iotMessageHandler:

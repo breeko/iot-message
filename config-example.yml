@@ -1,0 +1,7 @@
+arn: "arn:aws:iot:us-east-1:xxx"
+host: "xxx.iot.us-east-1.amazonaws.com"
+rootCAPath: "certificates/root.ca.pem"
+certificatePath: "certificates/xxx.cert.pem"
+privateKeyPath: "certificates/xxx.private.key"
+port: 8883
+clientId: "xxx"

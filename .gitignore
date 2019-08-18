@@ -1,6 +1,6 @@
 # .gitignore
 
-config.py
+config.yml
 *.pem
 *.key
 
