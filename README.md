@@ -1,6 +1,6 @@
 # iot-message
 
-iot-deploy is a tool to monitor mqtt messages sent by AWS and use them to trigger arbitrary commands on an internet enabled device.
+iot-message is a tool to monitor mqtt messages sent by AWS and use them to trigger arbitrary commands on an internet enabled device.
 
 One use case can be to monitor github commits, initialize pull and restart a service.
 
