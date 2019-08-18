@@ -38,22 +38,3 @@ curl --header "Content-Type: application/json" \
 ```
 
  and you should see "Hello from Lambda" on your app console.
-
-
-
-On device:
-
-ssh-keygen -t rsa (enter for all defaults)
-chmod 400 ~/.ssh/id_rsa.pub
-nano ~/.ssh/config
-
-```
-Host [private-repo-name]
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_rsa.pub
-  IdentitiesOnly yes
-```
-chmod 400 ~/.ssh/config
-
-git clone git@[private-repo]:[user]/[private-rep]
