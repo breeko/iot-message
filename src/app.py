@@ -3,8 +3,6 @@ import json
 from subscriptions import subs
 from utils import load_config
 
-CONFIG = "../config.yml"
-
 def setup_mqtt_client(config):
     camMQTTClient = AWSIoTMQTTClient(config["clientId"])
     camMQTTClient.configureEndpoint(config["host"], config["port"])
@@ -24,7 +22,7 @@ def subscribe(client):
         client.subscribe(topic, 1, func)
 
 if __name__ == "__main__":
-    config = load_config(CONFIG)
+    config = load_config()
     client = setup_mqtt_client(config)
     subscribe(client)
     print("Listening...")

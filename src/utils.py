@@ -1,5 +1,7 @@
 import yaml
 
-def load_config(config):
-    with open(config, 'r') as stream:
+CONFIG = "../config.yml"
+
+def load_config():
+    with open(CONFIG, 'r') as stream:
         return yaml.safe_load(stream)
