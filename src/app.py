@@ -2,12 +2,9 @@ from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
 import json
 import yaml
 from subscriptions import subs
+from utils import load_config
 
 CONFIG = "../config.yml"
-
-def load_config():
-    with open(CONFIG, 'r') as stream:
-        return yaml.safe_load(stream)
 
 def setup_mqtt_client(config):
     camMQTTClient = AWSIoTMQTTClient(config["clientId"])
