@@ -1,6 +1,5 @@
 from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
 import json
-import yaml
 from subscriptions import subs
 from utils import load_config
 
@@ -25,7 +24,7 @@ def subscribe(client):
         client.subscribe(topic, 1, func)
 
 if __name__ == "__main__":
-    config = load_config()
+    config = load_config(CONFIG)
     client = setup_mqtt_client(config)
     subscribe(client)
     print("Listening...")
