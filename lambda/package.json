@@ -17,9 +17,9 @@
     "@types/aws-lambda": "^8.10.31",
     "@types/node": "^10.14.15",
     "serverless-webpack": "^5.3.1",
-    "ts-loader": "^5.4.5",
+    "ts-loader": "^9.4.2",
     "typescript": "^3.5.3",
-    "webpack": "^4.39.2"
+    "webpack": "^5.75.0"
   },
   "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
   "license": "MIT"
